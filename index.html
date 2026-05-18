@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1" />
+<meta name="theme-color" content="#0f3a4f" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Urordle" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="description" content="Urordle — a daily urology diagnosis puzzle. Read the case, name the diagnosis, fewer guesses wins." />
+<meta property="og:title" content="Urordle — Daily Urology Diagnosis Puzzle" />
+<meta property="og:description" content="Read the case. Name the diagnosis. Fewer guesses, better score. A daily clinical puzzle for urology learners." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="/icons/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<title>Urordle — Daily Urology Diagnosis Puzzle</title>
+<link rel="manifest" href="/manifest.json" />
+<link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
+<link rel="apple-touch-icon" href="/icons/icon-192.png" />
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <button class="icon-btn" id="btn-help" aria-label="How to play">?</button>
+    <h1 class="brand">Ur<span class="brand-accent">ordle</span></h1>
+    <div class="header-actions">
+      <button class="icon-btn" id="btn-stats" aria-label="Stats">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<main class="main" id="game">
+  <section class="case-area" aria-live="polite">
+    <div class="case-meta">
+      <span id="case-number">Case #—</span>
+      <span class="dot">·</span>
+      <span id="case-category">Loading…</span>
+    </div>
+    <ol class="clue-list" id="clue-list"></ol>
+  </section>
+
+  <section class="guesses" id="guesses" aria-live="polite"></section>
+
+  <section class="input-area" id="input-area">
+    <div class="autocomplete">
+      <input
+        type="text"
+        id="guess-input"
+        placeholder="Type your diagnosis…"
+        autocomplete="off"
+        autocapitalize="off"
+        autocorrect="off"
+        spellcheck="false"
+        inputmode="text"
+        aria-label="Diagnosis guess"
+      />
+      <ul class="autocomplete-list" id="autocomplete-list" role="listbox"></ul>
+    </div>
+    <div class="action-row">
+      <button class="btn btn-secondary" id="btn-skip">Skip clue</button>
+      <button class="btn btn-primary" id="btn-submit">Guess</button>
+    </div>
+    <p class="hint" id="guess-hint">6 guesses. Each wrong guess reveals another clue.</p>
+  </section>
+
+  <section class="result hidden" id="result">
+    <h2 id="result-title">—</h2>
+    <p class="result-dx">Diagnosis: <strong id="result-dx">—</strong></p>
+    <div class="result-teaching" id="result-teaching"></div>
+    <div class="result-share-grid" id="result-share-grid" aria-label="Result pattern"></div>
+    <div class="action-row">
+      <button class="btn btn-primary" id="btn-share">Share</button>
+      <button class="btn btn-secondary" id="btn-replay">Practice another</button>
+    </div>
+    <p class="hint" id="next-hint"></p>
+  </section>
+</main>
+
+<!-- Help Modal -->
+<div class="modal hidden" id="modal-help" role="dialog" aria-modal="true" aria-labelledby="help-title">
+  <div class="modal-card">
+    <button class="icon-btn modal-close" data-close>&times;</button>
+    <h2 id="help-title">How to play</h2>
+    <ol class="help-list">
+      <li>Read the clinical case at the top.</li>
+      <li>Type your best urology diagnosis. Suggestions appear as you type.</li>
+      <li>You have <strong>6 guesses</strong>. Each wrong guess reveals one more clue from the case.</li>
+      <li>Tap <em>Skip clue</em> if you want a new clue without spending a guess (limited to 2 skips).</li>
+      <li>Get the diagnosis in as few guesses as possible.</li>
+    </ol>
+    <p class="muted">A new case every day. Practice mode lets you keep playing.</p>
+    <p class="disclaimer">For education and entertainment only — not for clinical use.</p>
+  </div>
+</div>
+
+<!-- Stats Modal -->
+<div class="modal hidden" id="modal-stats" role="dialog" aria-modal="true" aria-labelledby="stats-title">
+  <div class="modal-card">
+    <button class="icon-btn modal-close" data-close>&times;</button>
+    <h2 id="stats-title">Statistics</h2>
+    <div class="stats-grid">
+      <div class="stat"><span class="stat-num" id="stat-played">0</span><span class="stat-label">Played</span></div>
+      <div class="stat"><span class="stat-num" id="stat-winrate">0%</span><span class="stat-label">Win %</span></div>
+      <div class="stat"><span class="stat-num" id="stat-streak">0</span><span class="stat-label">Streak</span></div>
+      <div class="stat"><span class="stat-num" id="stat-maxstreak">0</span><span class="stat-label">Max Streak</span></div>
+    </div>
+    <h3 class="subhead">Guess Distribution</h3>
+    <div class="hist" id="stat-hist"></div>
+    <div class="action-row">
+      <button class="btn btn-secondary" id="btn-reset">Reset stats</button>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <p>Urordle · For education only · Built with ♥ for urology learners</p>
+</footer>
+
+<script src="/data/cases.js"></script>
+<script src="/app.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js').catch(() => {});
+    });
+  }
+</script>
+</body>
+</html>

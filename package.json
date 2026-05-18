@@ -1,0 +1,11 @@
+{
+  "name": "urordle",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Urordle — a daily urology diagnosis puzzle. Static PWA, no build step.",
+  "scripts": {
+    "start": "npx --yes serve -l 5173 .",
+    "dev": "npx --yes serve -l 5173 ."
+  },
+  "license": "MIT"
+}
