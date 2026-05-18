@@ -424,6 +424,89 @@ body {
 }
 .hist-row.highlight .h-fill { background: var(--green); }
 
+/* Archive */
+.archive-summary {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0 14px;
+  flex-wrap: wrap;
+}
+.archive-summary .chip {
+  font-size: 12px;
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  padding: 5px 10px;
+  border-radius: 999px;
+  color: var(--fg-muted);
+}
+.archive-summary .chip strong { color: var(--fg); margin-right: 4px; }
+.archive-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.archive-item {
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease, transform 80ms ease;
+}
+.archive-item:hover { background: #20303a; border-color: var(--accent); }
+.archive-item:active { transform: scale(0.99); }
+.archive-item .a-day {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--fg);
+  min-width: 48px;
+}
+.archive-item .a-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.archive-item .a-date { font-size: 13px; color: var(--fg-muted); }
+.archive-item .a-dx { font-size: 12.5px; color: var(--fg-dim); font-style: italic; }
+.archive-item .a-result {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.archive-item .a-result.won { background: rgba(58, 165, 92, 0.18); color: #7fd29a; }
+.archive-item .a-result.lost { background: rgba(216, 88, 75, 0.18); color: #ee9087; }
+.archive-item .a-result.unplayed { background: rgba(152, 168, 176, 0.12); color: var(--fg-dim); }
+
+/* Back-to-today link inside case meta */
+.back-link {
+  margin-left: auto;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(42, 164, 200, 0.12);
+}
+.back-link:hover { background: rgba(42, 164, 200, 0.22); }
+
+.case-meta { display: flex; align-items: center; flex-wrap: wrap; }
+
 /* Footer */
 .footer {
   margin-top: 24px;

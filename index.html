@@ -34,6 +34,14 @@
     <button class="icon-btn" id="btn-help" aria-label="How to play">?</button>
     <h1 class="brand">Ur<span class="brand-accent">ordle</span></h1>
     <div class="header-actions">
+      <button class="icon-btn" id="btn-archive" aria-label="Archive of past puzzles" title="Archive">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2"/>
+          <line x1="16" y1="2" x2="16" y2="6"/>
+          <line x1="8" y1="2" x2="8" y2="6"/>
+          <line x1="3" y1="10" x2="21" y2="10"/>
+        </svg>
+      </button>
       <button class="icon-btn" id="btn-stats" aria-label="Stats">&#9776;</button>
     </div>
   </div>
@@ -45,6 +53,7 @@
       <span id="case-number">Case #—</span>
       <span class="dot">·</span>
       <span id="case-category">Loading…</span>
+      <a href="#" id="back-to-today" class="back-link hidden">← Today</a>
     </div>
     <ol class="clue-list" id="clue-list"></ol>
   </section>
@@ -100,6 +109,17 @@
     </ol>
     <p class="muted">A new case every day. Practice mode lets you keep playing.</p>
     <p class="disclaimer">For education and entertainment only — not for clinical use.</p>
+  </div>
+</div>
+
+<!-- Archive Modal -->
+<div class="modal hidden" id="modal-archive" role="dialog" aria-modal="true" aria-labelledby="archive-title">
+  <div class="modal-card">
+    <button class="icon-btn modal-close" data-close>&times;</button>
+    <h2 id="archive-title">Archive</h2>
+    <p class="muted">Play any past puzzle. Replays don't affect your streak.</p>
+    <div id="archive-summary" class="archive-summary"></div>
+    <ul class="archive-list" id="archive-list" aria-label="Past puzzles"></ul>
   </div>
 </div>
 

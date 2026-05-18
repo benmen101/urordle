@@ -6,7 +6,10 @@
   const MAX_SKIPS = 2;
   const STORAGE_KEY = 'urordle.state.v1';
   const STATS_KEY = 'urordle.stats.v1';
-  const EPOCH = new Date('2026-01-01T00:00:00Z').getTime();
+  const HISTORY_KEY = 'urordle.history.v1';
+  // Calendar-day math anchored at Jan 1, 2026 local. We compute via Date.UTC
+  // on local-y/m/d so DST transitions don't introduce off-by-one errors.
+  const EPOCH_YEAR = 2026, EPOCH_MONTH = 0, EPOCH_DAY = 1;
 
   // ----- Helpers -----
 
@@ -20,13 +23,31 @@
   }
 
   function todayIndex() {
-    const now = Date.now();
-    return Math.max(0, Math.floor((now - EPOCH) / 86400000));
+    const now = new Date();
+    const todayUtc = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+    const epochUtc = Date.UTC(EPOCH_YEAR, EPOCH_MONTH, EPOCH_DAY);
+    return Math.max(0, Math.round((todayUtc - epochUtc) / 86400000));
+  }
+
+  function dateForDay(dayNumber) {
+    // dayNumber is 1-indexed: Day 1 = local Jan 1, 2026.
+    const d = new Date(EPOCH_YEAR, EPOCH_MONTH, EPOCH_DAY);
+    d.setDate(d.getDate() + (dayNumber - 1));
+    return d;
+  }
+
+  function formatDate(d) {
+    return d.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+  }
+
+  function caseForDay(cases, dayNumber) {
+    const idx = (dayNumber - 1) % cases.length;
+    return cases[idx];
   }
 
   function pickDailyCase(cases) {
-    const idx = todayIndex() % cases.length;
-    return { case: cases[idx], dayNumber: todayIndex() + 1 };
+    const day = todayIndex() + 1;
+    return { case: caseForDay(cases, day), dayNumber: day };
   }
 
   function pickPracticeCase(cases, excludeId) {
@@ -155,10 +176,27 @@
     };
   }
 
+  function loadHistory() {
+    try {
+      const raw = localStorage.getItem(HISTORY_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (e) { return {}; }
+  }
+  function saveHistory(h) {
+    try { localStorage.setItem(HISTORY_KEY, JSON.stringify(h)); } catch (e) {}
+  }
+  function recordHistory(dayNumber, result) {
+    const h = loadHistory();
+    // Don't overwrite a prior completed result with a worse/replay one.
+    if (h[dayNumber] && h[dayNumber].won) return;
+    h[dayNumber] = result;
+    saveHistory(h);
+  }
+
   // ----- Game state -----
 
   const state = {
-    mode: 'daily', // 'daily' | 'practice'
+    mode: 'daily', // 'daily' | 'practice' | 'archive'
     case: null,
     dayNumber: null,
     guesses: [], // [{ text, kind: 'correct'|'close'|'wrong'|'skip' }]
@@ -178,10 +216,16 @@
 
   function render() {
     // Case meta
+    const backLink = $('#back-to-today');
     if (state.mode === 'daily') {
       $('#case-number').textContent = `Case #${state.dayNumber}`;
+      backLink.classList.add('hidden');
+    } else if (state.mode === 'archive') {
+      $('#case-number').textContent = `Archive · Case #${state.dayNumber} · ${formatDate(dateForDay(state.dayNumber))}`;
+      backLink.classList.remove('hidden');
     } else {
       $('#case-number').textContent = `Practice case`;
+      backLink.classList.remove('hidden');
     }
     $('#case-category').textContent = state.case.category || 'Urology';
 
@@ -289,14 +333,26 @@
   // ----- Stats -----
 
   function recordResult() {
+    const wrongCount = state.guesses.filter(g => g.kind === 'wrong' || g.kind === 'close').length;
+
+    // Archive mode: record per-day history only (no stats/streak change).
+    if (state.mode === 'archive') {
+      recordHistory(state.dayNumber, {
+        won: state.won,
+        guesses: state.won ? wrongCount + 1 : null,
+        replayed: true
+      });
+      return;
+    }
     if (state.mode !== 'daily') return;
+
     const stats = loadStats();
     const today = todayIndex();
     if (stats.lastDayCompleted === today) return; // already recorded
+
     stats.played += 1;
     if (state.won) {
       stats.won += 1;
-      const wrongCount = state.guesses.filter(g => g.kind === 'wrong' || g.kind === 'close').length;
       const slot = Math.min(MAX_GUESSES, wrongCount + 1);
       stats.distribution[slot] = (stats.distribution[slot] || 0) + 1;
       const continued = stats.lastDayCompleted === today - 1 || stats.lastDayCompleted === -1;
@@ -307,6 +363,12 @@
     }
     stats.lastDayCompleted = today;
     saveStats(stats);
+
+    // Also write to history so this day appears in the archive after it rolls over.
+    recordHistory(state.dayNumber, {
+      won: state.won,
+      guesses: state.won ? wrongCount + 1 : null
+    });
   }
 
   function renderStats() {
@@ -435,6 +497,86 @@
     render();
   }
 
+  function startArchive(dayNumber) {
+    state.mode = 'archive';
+    state.case = caseForDay(CASES, dayNumber);
+    state.dayNumber = dayNumber;
+    state.guesses = [];
+    state.cluesShown = 1;
+    state.skipsUsed = 0;
+    state.finished = false;
+    state.won = false;
+    render();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function renderArchive() {
+    const list = $('#archive-list');
+    const summary = $('#archive-summary');
+    list.innerHTML = '';
+    summary.innerHTML = '';
+
+    const history = loadHistory();
+    const today = todayIndex() + 1; // 1-indexed day number
+    const lastArchivable = today - 1;
+
+    if (lastArchivable < 1) {
+      list.innerHTML = '<li class="muted" style="padding:12px;text-align:center;">No past puzzles yet — check back tomorrow.</li>';
+      return;
+    }
+
+    // Summary chips
+    let played = 0, won = 0;
+    for (let d = 1; d <= lastArchivable; d++) {
+      if (history[d]) {
+        played += 1;
+        if (history[d].won) won += 1;
+      }
+    }
+    summary.innerHTML = `
+      <span class="chip"><strong>${lastArchivable}</strong>past puzzles</span>
+      <span class="chip"><strong>${played}</strong>played</span>
+      <span class="chip"><strong>${won}</strong>solved</span>
+    `;
+
+    // List rows, newest first
+    for (let d = lastArchivable; d >= 1; d--) {
+      const result = history[d];
+      const theCase = caseForDay(CASES, d);
+      const li = document.createElement('li');
+      li.className = 'archive-item';
+      li.setAttribute('role', 'button');
+      li.tabIndex = 0;
+
+      const resClass = result ? (result.won ? 'won' : 'lost') : 'unplayed';
+      const resText = result
+        ? (result.won ? `${result.guesses}/${MAX_GUESSES}` : 'X/6')
+        : 'Play';
+
+      // Only reveal diagnosis on already-completed days.
+      const dxLine = result
+        ? `<div class="a-dx">${theCase.dx}</div>`
+        : '';
+
+      li.innerHTML = `
+        <div class="a-day">#${d}</div>
+        <div class="a-meta">
+          <div class="a-date">${formatDate(dateForDay(d))}</div>
+          ${dxLine}
+        </div>
+        <span class="a-result ${resClass}">${resText}</span>
+      `;
+      li.addEventListener('click', () => {
+        closeModal('modal-archive');
+        startArchive(d);
+      });
+      li.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); li.click(); }
+      });
+      list.appendChild(li);
+    }
+  }
+
   // ----- Autocomplete -----
 
   function renderAutocomplete(items) {
@@ -546,6 +688,8 @@
 
     $('#btn-help').addEventListener('click', () => openModal('modal-help'));
     $('#btn-stats').addEventListener('click', () => { renderStats(); openModal('modal-stats'); });
+    $('#btn-archive').addEventListener('click', () => { renderArchive(); openModal('modal-archive'); });
+    $('#back-to-today').addEventListener('click', e => { e.preventDefault(); startDaily(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
     $('#btn-reset').addEventListener('click', () => {
       if (confirm('Reset all statistics? This cannot be undone.')) {
         saveStats(defaultStats());
