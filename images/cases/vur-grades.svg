@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260" role="img" aria-label="Schematic of vesicoureteral reflux grades I through V">
+  <title>Vesicoureteral reflux grading I–V</title>
+  <desc>Five side-by-side schematics. Reflux extent and dilation increase progressively from Grade I (reflux into non-dilated ureter only) to Grade V (gross tortuous dilation of ureter and collecting system with loss of papillary impressions).</desc>
+  <style>
+    .lbl { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 14px; font-weight: 700; fill: #143442; }
+    .sub { font-family: -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 9px; fill: #4a6675; }
+    .org { stroke: #2c4f5c; stroke-width: 1.6; fill: none; }
+    .filled { fill: #79c4d9; }
+    .bg { fill: #f6fafb; }
+  </style>
+  <rect class="bg" width="600" height="260" rx="8"/>
+
+  <!-- GRADE I: reflux into non-dilated ureter, no renal pelvis -->
+  <g transform="translate(20,30)">
+    <!-- kidney outline (not filled - no reflux to pelvis) -->
+    <path class="org" d="M50,10 q-20,15 -18,40 q2,25 18,38 q16,-13 18,-38 q2,-25 -18,-40 z"/>
+    <path class="org" d="M40,28 q10,5 20,0 q-3,15 -10,16 q-7,-1 -10,-16 z"/>
+    <!-- thin straight ureter, filled (reflux present) -->
+    <path class="filled" stroke="#2c4f5c" stroke-width="1.2" d="M48,90 L48,160 L52,160 L52,90 z"/>
+    <!-- bladder -->
+    <path class="org filled" d="M15,170 q-3,15 5,25 q30,8 60,0 q8,-10 5,-25 z"/>
+    <text class="lbl" x="50" y="208" text-anchor="middle">I</text>
+    <text class="sub" x="50" y="222" text-anchor="middle">Ureter only</text>
+    <text class="sub" x="50" y="234" text-anchor="middle">No dilation</text>
+  </g>
+
+  <!-- GRADE II: into renal pelvis, no dilation -->
+  <g transform="translate(140,30)">
+    <path class="org" d="M50,10 q-20,15 -18,40 q2,25 18,38 q16,-13 18,-38 q2,-25 -18,-40 z"/>
+    <!-- pelvis filled but not dilated -->
+    <path class="filled" stroke="#2c4f5c" stroke-width="1.2" d="M40,28 q10,5 20,0 q-3,15 -10,16 q-7,-1 -10,-16 z"/>
+    <path class="filled" stroke="#2c4f5c" stroke-width="1.2" d="M48,44 L48,160 L52,160 L52,44 z"/>
+    <path class="org filled" d="M15,170 q-3,15 5,25 q30,8 60,0 q8,-10 5,-25 z"/>
+    <text class="lbl" x="50" y="208" text-anchor="middle">II</text>
+    <text class="sub" x="50" y="222" text-anchor="middle">Up to pelvis</text>
+    <text class="sub" x="50" y="234" text-anchor="middle">No dilation</text>
+  </g>
+
+  <!-- GRADE III: mild dilation -->
+  <g transform="translate(260,30)">
+    <path class="org" d="M50,10 q-22,15 -20,42 q2,26 20,40 q18,-14 20,-40 q2,-27 -20,-42 z"/>
+    <!-- mildly dilated pelvis -->
+    <path class="filled" stroke="#2c4f5c" stroke-width="1.2" d="M36,28 q14,6 28,0 q-4,18 -14,20 q-10,-2 -14,-20 z"/>
+    <!-- mildly dilated ureter -->
+    <path class="filled" stroke="#2c4f5c" stroke-width="1.2" d="M44,48 L44,160 L56,160 L56,48 z"/>
+    <path class="org filled" d="M15,170 q-3,15 5,25 q30,8 60,0 q8,-10 5,-25 z"/>
+    <text class="lbl" x="50" y="208" text-anchor="middle">III</text>
+    <text class="sub" x="50" y="222" text-anchor="middle">Mild dilation</text>
+    <text class="sub" x="50" y="234" text-anchor="middle">Sharp fornices</text>
+  </g>
+
+  <!-- GRADE IV: moderate dilation, blunted fornices, mild tortuosity -->
+  <g transform="translate(380,30)">
+    <path class="org" d="M50,10 q-25,16 -23,45 q2,28 23,42 q21,-14 23,-42 q2,-29 -23,-45 z"/>
+    <!-- moderately dilated, blunted fornices -->
+    <path class="filled" stroke="#2c4f5c" stroke-width="1.2" d="M30,28 q20,8 40,0 q-5,22 -20,24 q-15,-2 -20,-24 z"/>
+    <!-- moderately dilated tortuous ureter -->
+    <path class="filled" stroke="#2c4f5c" stroke-width="1.2" d="M40,50 q-4,20 6,30 q-8,20 4,40 q-6,18 4,38 L60,160 q-10,-18 -4,-38 q-12,-20 -4,-40 q-10,-10 -6,-30 z"/>
+    <path class="org filled" d="M15,170 q-3,15 5,25 q30,8 60,0 q8,-10 5,-25 z"/>
+    <text class="lbl" x="50" y="208" text-anchor="middle">IV</text>
+    <text class="sub" x="50" y="222" text-anchor="middle">Moderate</text>
+    <text class="sub" x="50" y="234" text-anchor="middle">Blunt fornices</text>
+  </g>
+
+  <!-- GRADE V: gross dilation, severe tortuosity, no papillary impressions -->
+  <g transform="translate(500,30)">
+    <path class="org" d="M50,8 q-28,18 -26,48 q2,30 26,46 q24,-16 26,-46 q2,-30 -26,-48 z"/>
+    <!-- grossly dilated calyces / no papillary impressions -->
+    <path class="filled" stroke="#2c4f5c" stroke-width="1.2" d="M24,32 q26,10 52,0 q-6,28 -26,30 q-20,-2 -26,-30 z"/>
+    <!-- severely tortuous and dilated ureter -->
+    <path class="filled" stroke="#2c4f5c" stroke-width="1.2" d="M34,56 q-6,18 10,32 q-14,18 4,38 q-10,18 6,38 L64,164 q-16,-20 -6,-38 q-18,-20 -4,-38 q-16,-14 -10,-32 z"/>
+    <path class="org filled" d="M15,170 q-3,15 5,25 q30,8 60,0 q8,-10 5,-25 z"/>
+    <text class="lbl" x="50" y="208" text-anchor="middle">V</text>
+    <text class="sub" x="50" y="222" text-anchor="middle">Gross dilation</text>
+    <text class="sub" x="50" y="234" text-anchor="middle">Tortuous ureter</text>
+  </g>
+</svg>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<meta name="theme-color" content="#0f3a4f" />
+<meta name="description" content="Urordle privacy policy — what we store, what we don't, and why." />
+<meta name="robots" content="index,follow" />
+<title>Privacy — Urordle</title>
+<link rel="icon" type="image/svg+xml" href="/icons/icon.svg" />
+<link rel="apple-touch-icon" href="/icons/icon-192.png" />
+<link rel="stylesheet" href="/styles.css" />
+<link rel="canonical" href="https://urordle.com/privacy" />
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="icon-btn" aria-label="Back to game" style="text-decoration:none;">←</a>
+    <h1 class="brand">Ur<span class="brand-accent">ordle</span></h1>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<main class="main">
+  <article class="case-area" style="line-height:1.6;">
+    <h1 style="margin-top:0;">Privacy &amp; Data</h1>
+    <p class="muted" style="text-align:left;margin-top:0;">Last updated: May 18, 2026.</p>
+
+    <h2>Short version</h2>
+    <p>
+      Urordle is a small, single-page web game. We don't run a server that stores your data,
+      we don't have user accounts, and we don't sell, share, or transmit anything about you
+      to anyone. The only thing the app remembers is what your own browser saves locally.
+    </p>
+
+    <h2>What we store locally on your device</h2>
+    <p>
+      We use your browser's <strong>localStorage</strong> (not cookies) to remember:
+    </p>
+    <ul>
+      <li>Whether you've completed today's puzzle and how many guesses it took</li>
+      <li>Your current and longest streak</li>
+      <li>A guess-distribution histogram</li>
+      <li>A per-day history (which past puzzles you've solved) so the Archive can show your results</li>
+      <li>A flag noting that you've seen the "How to play" modal so we don't reopen it</li>
+    </ul>
+    <p>
+      This data never leaves your device. It is not sent to any server we control or to any third party.
+      You can wipe it any time from <em>Statistics → Reset stats</em>, or by clearing site data in your
+      browser settings.
+    </p>
+
+    <h2>Cookies</h2>
+    <p>
+      Urordle sets <strong>no cookies</strong>. None. The localStorage entries above are the only data the app writes.
+    </p>
+
+    <h2>Analytics &amp; tracking</h2>
+    <p>
+      Urordle includes <strong>no analytics</strong>, no pixels, no fingerprinting,
+      and no third-party scripts that observe your activity. Your visit is not logged
+      beyond standard server access logs maintained by our static host (Cloudflare Pages),
+      which Cloudflare retains for security and abuse-prevention purposes per
+      <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener">their privacy policy</a>.
+    </p>
+
+    <h2>Third-party services</h2>
+    <p>
+      The site is hosted on Cloudflare Pages and served through Cloudflare's CDN.
+      Cloudflare sees standard HTTP request metadata (IP address, user agent, requested URL)
+      but Urordle does not pass them any data about you.
+    </p>
+
+    <h2>Service worker / offline use</h2>
+    <p>
+      We register a service worker so Urordle can run when you're offline. It caches the
+      app's static files (HTML, CSS, JS, icons) on your device. The service worker does not
+      collect or transmit data.
+    </p>
+
+    <h2>Children</h2>
+    <p>
+      Urordle is intended for adult medical learners. It is not directed at children under 13.
+      We do not knowingly collect data from any user — including children — because we
+      do not collect data from users at all.
+    </p>
+
+    <h2>Medical disclaimer</h2>
+    <p>
+      Urordle is for education and entertainment only. The cases, diagnoses, workups, and
+      treatments shown are simplified for the puzzle format. <strong>Nothing in this app is
+      medical advice or clinical decision support.</strong> Always defer to current guidelines,
+      institutional protocols, and your supervising clinicians for patient care.
+    </p>
+
+    <h2>Changes</h2>
+    <p>
+      If this policy changes, the "Last updated" date above will change with it. Material changes
+      will be noted in the site footer for a reasonable period.
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      Questions: open an issue at the
+      <a href="https://github.com/benmen101/urordle/issues" rel="noopener">GitHub repository</a>.
+    </p>
+  </article>
+</main>
+
+<footer class="footer">
+  <p><a href="/" style="color:inherit;">← Back to Urordle</a></p>
+</footer>
+</body>
+</html>

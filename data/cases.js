@@ -328,8 +328,13 @@ window.URORDLE_CASES = [
       "Each prior UTI grew E. coli and responded promptly to antibiotics. Growth and development have been normal.",
       "Renal/bladder ultrasound shows mild left hydronephrosis without scarring.",
       "Voiding cystourethrogram demonstrates retrograde filling of the left ureter and renal pelvis with calyceal blunting during voiding.",
-      "DMSA renal scan shows a small photopenic area in the upper pole of the left kidney consistent with scarring.",
-      "She is started on continuous antibiotic prophylaxis with TMP-SMX."
+      {
+        text: "On the VCUG, the degree of dilation and tortuosity matches the schematic below.",
+        image: "/images/cases/vur-grades.svg",
+        alt: "Schematic of vesicoureteral reflux grades I–V",
+        caption: "Reference: International Reflux Grading I–V (schematic, not a real VCUG)."
+      },
+      "She is started on continuous antibiotic prophylaxis with TMP-SMX. DMSA later shows a small photopenic upper-pole area consistent with scarring."
     ],
     teaching: "Recurrent febrile UTIs in a young child → image for VUR. Pathophys: short submucosal ureteral tunnel allows retrograde flow. Graded I-V on VCUG. Risk for pyelonephritis → renal scarring → HTN, CKD. Management: low-grade often resolves; prophylactic antibiotics; surgical reimplantation (ureteroneocystostomy) or endoscopic Deflux for high-grade or breakthrough infections.",
     category: "Pediatric"
@@ -602,6 +607,456 @@ window.URORDLE_CASES = [
       "She is treated empirically with nitrofurantoin 100 mg BID x 5 days without need for culture."
     ],
     teaching: "Uncomplicated cystitis in a young, non-pregnant woman with dysuria/frequency/urgency. E. coli causes ~80%. Treat empirically. First-line agents: nitrofurantoin x 5d, TMP-SMX x 3d (if local resistance <20%), fosfomycin single dose. Avoid fluoroquinolones for uncomplicated UTI. Complicated UTI (men, pregnant, immunocompromised, anatomic abnormality) requires culture and longer courses.",
+    category: "Common"
+  },
+  {
+    id: 41,
+    dx: "Chronic pelvic pain syndrome",
+    aliases: ["chronic pelvic pain syndrome", "cpps", "chronic prostatitis", "chronic nonbacterial prostatitis", "prostatitis category iii", "chronic prostatitis chronic pelvic pain syndrome"],
+    clues: [
+      "A 38-year-old man presents with 8 months of intermittent perineal and pelvic pain.",
+      "He reports pain with ejaculation, mild voiding symptoms, and decreased libido. No fever.",
+      "Multiple urine cultures over the past year have been negative.",
+      "He has been treated with three courses of antibiotics without lasting benefit.",
+      "On exam, the prostate is non-tender. UA, urethral swab, and expressed prostatic secretions cultures are all negative.",
+      "He is managed with pelvic floor physical therapy, alpha-blockers, and SNRI for pain modulation."
+    ],
+    teaching: "NIH category III prostatitis: chronic pelvic pain without identifiable infection. Diagnosis of exclusion. UPOINT phenotyping (urinary, psychosocial, organ-specific, infection, neurologic, tenderness of skeletal muscles) guides multimodal treatment. Antibiotics not helpful unless cultures positive. High rates of co-existing fibromyalgia, IBS, and depression.",
+    category: "Chronic"
+  },
+  {
+    id: 42,
+    dx: "Mumps orchitis",
+    aliases: ["mumps orchitis", "viral orchitis", "orchitis"],
+    clues: [
+      "A 22-year-old unvaccinated male graduate student presents with 4 days of bilateral parotid swelling, malaise, and fever.",
+      "Two days into the illness he develops severe right testicular pain and swelling.",
+      "There is no dysuria or urethral discharge.",
+      "He recently returned from a study-abroad program during an outbreak of mumps in his university dormitory.",
+      "On exam, parotid glands are tender and enlarged. The right testis is markedly swollen, tender, and erythematous.",
+      "Mumps IgM is positive. Treatment is supportive: ice, scrotal elevation, NSAIDs. He is counseled on the ~10% risk of subfertility from atrophy."
+    ],
+    teaching: "Viral orchitis (most commonly mumps) typically follows or accompanies parotitis by 4-8 days. Often bilateral in mumps. Treatment is supportive — antibiotics do not help. Sequelae include testicular atrophy and subfertility in ~30-50% of involved testes, though bilateral infertility is uncommon. MMR vaccination is highly preventive.",
+    category: "Infection"
+  },
+  {
+    id: 43,
+    dx: "Spermatocele",
+    aliases: ["spermatocele", "epididymal cyst", "spermatic cyst"],
+    clues: [
+      "A 48-year-old man presents with a painless, slowly growing right scrotal mass that he discovered 6 months ago.",
+      "It is not painful and has not interfered with daily activities. No fever, no urinary symptoms.",
+      "On exam, a 1.5 cm soft, cystic, non-tender mass is palpable separately from and superior to the right testis.",
+      "The testis itself is normal in size and consistency. The mass transilluminates brightly.",
+      "Scrotal ultrasound shows a 1.5 cm anechoic cystic lesion arising from the head of the epididymis.",
+      "He is reassured. Surveillance only; surgery reserved for symptomatic or large lesions."
+    ],
+    teaching: "Cystic dilation of the epididymal duct, usually at the head. Painless, separately palpable from testis, transilluminates (vs solid mass = malignancy concern). Often incidental. Most managed expectantly; spermatocelectomy if pain, large size, or cosmetic concern (with risk of post-op infertility from epididymal scarring).",
+    category: "Common"
+  },
+  {
+    id: 44,
+    dx: "Adrenal incidentaloma",
+    aliases: ["adrenal incidentaloma", "incidental adrenal adenoma", "non functioning adrenal adenoma", "nonfunctioning adrenal adenoma", "adrenal adenoma"],
+    clues: [
+      "A 59-year-old woman has a CT abdomen for nonspecific abdominal pain.",
+      "Imaging shows a 2.2 cm well-circumscribed, homogeneous lesion in the left adrenal gland.",
+      "She is asymptomatic and has no history of malignancy. BP is 124/78. No virilization or Cushingoid features.",
+      "The lesion measures -8 Hounsfield units on non-contrast CT with >60% absolute washout on delayed phase.",
+      "Workup: plasma free metanephrines, 1-mg dexamethasone suppression test, and aldosterone:renin ratio are all normal.",
+      "She is followed clinically. No additional imaging is required given benign features and biochemical inactivity."
+    ],
+    teaching: "Found in ~5% of abdominal CTs. Workup answers two questions: (1) is it functioning? (cortisol, catecholamines/metanephrines, aldosterone if hypertensive); (2) is it benign? CT features favoring benign adenoma: <4 cm, smooth borders, <10 HU on non-contrast (lipid-rich), high washout. Surgery for: functioning, >4 cm, suspicious imaging features, or significant growth on surveillance.",
+    category: "Endocrine"
+  },
+  {
+    id: 45,
+    dx: "Primary hyperaldosteronism",
+    aliases: ["primary hyperaldosteronism", "conn syndrome", "conns syndrome", "aldosteronoma", "primary aldosteronism"],
+    clues: [
+      "A 44-year-old woman with resistant hypertension (3-drug regimen, BP still 168/102) presents for evaluation.",
+      "She reports muscle cramps, weakness, and excessive nocturnal urination.",
+      "Labs: potassium 2.9 mmol/L, sodium 144, bicarbonate 30. Metabolic alkalosis present.",
+      "Plasma aldosterone is 35 ng/dL, plasma renin activity is suppressed at <0.2 ng/mL/hr (ARR > 100).",
+      "Saline suppression test fails to suppress aldosterone, confirming the diagnosis.",
+      "CT shows a 1.4 cm left adrenal nodule. Adrenal vein sampling confirms unilateral lateralization. She undergoes laparoscopic left adrenalectomy with HTN resolution."
+    ],
+    teaching: "Most common secondary cause of HTN (~5-10% of hypertensives, more in resistant HTN). Hallmarks: HTN + hypokalemia (though K may be normal) + metabolic alkalosis. Screen with aldosterone:renin ratio (>20-30). Confirm with salt-loading. Subtype: AVS distinguishes unilateral adenoma (surgery) from bilateral hyperplasia (mineralocorticoid receptor antagonist).",
+    category: "Endocrine"
+  },
+  {
+    id: 46,
+    dx: "Cushing syndrome",
+    aliases: ["cushing syndrome", "cushings syndrome", "adrenal cushing", "hypercortisolism", "cortisol producing adenoma"],
+    clues: [
+      "A 38-year-old woman presents with 18 months of weight gain, easy bruising, and proximal muscle weakness.",
+      "On exam: central obesity, moon facies, dorsocervical fat pad, wide purple abdominal striae, and thin extremities.",
+      "BP 158/94, fasting glucose 178 mg/dL. New-onset hirsutism and acne.",
+      "Late-night salivary cortisol is elevated; 24-hour urine free cortisol is 4x ULN; 1-mg overnight dexamethasone fails to suppress cortisol.",
+      "ACTH is suppressed at <5 pg/mL, indicating an ACTH-independent (adrenal) source.",
+      "CT abdomen reveals a 3.5 cm right adrenal mass. She undergoes right adrenalectomy with perioperative glucocorticoid replacement."
+    ],
+    teaching: "Cushing SYNDROME = hypercortisolism from any source; Cushing DISEASE = pituitary ACTH-secreting adenoma. Steps: confirm hypercortisolism (24h UFC, late-night salivary cortisol, dex suppression — need 2 abnormal) → measure ACTH (suppressed = adrenal; elevated = pituitary or ectopic) → image. Most common etiology overall is exogenous steroids — always check medications first.",
+    category: "Endocrine"
+  },
+  {
+    id: 47,
+    dx: "Horseshoe kidney",
+    aliases: ["horseshoe kidney", "fused kidneys", "horseshoe"],
+    clues: [
+      "A 28-year-old man presents with his second episode of left-sided renal colic in 18 months.",
+      "He reports a long-standing history of vague abdominal pain and recurrent UTIs since childhood.",
+      "On non-contrast CT, both kidneys are abnormally low-lying, and their lower poles are connected by a band of renal tissue crossing the midline anterior to the great vessels.",
+      "Multiple renal arteries are noted on CT angiography.",
+      "An obstructing 5 mm calculus is seen in the left renal pelvis, with mild hydronephrosis above an aberrant configuration of the renal pelvis.",
+      "He undergoes flexible ureteroscopy with laser lithotripsy; long-term he is at increased risk of stones, UTIs, UPJ obstruction, and Wilms tumor (in pediatric cases)."
+    ],
+    teaching: "Most common renal fusion anomaly (~1:400). Lower poles fused by isthmus, blocked from normal ascent by IMA. Higher rates of: UPJ obstruction, stones, UTI, Wilms tumor (in children), renal cancer (slight). Often incidental but symptoms relate to anatomic distortion. Associated with Turner syndrome, trisomy 18.",
+    category: "Genetic"
+  },
+  {
+    id: 48,
+    dx: "Renal vein thrombosis",
+    aliases: ["renal vein thrombosis", "rvt"],
+    clues: [
+      "A 52-year-old man with known membranous nephropathy and nephrotic-range proteinuria (8 g/day) presents with sudden severe left flank pain.",
+      "He also reports gross hematuria and new-onset leg swelling.",
+      "Serum albumin is 1.8 g/dL; antithrombin III is low. He has no recent trauma or surgery.",
+      "Ultrasound Doppler shows an enlarged left kidney with absent venous flow in the renal vein.",
+      "CT venography confirms thrombus extending from the left renal vein into the IVC.",
+      "He is started on therapeutic anticoagulation. Long-term anticoagulation is recommended while nephrotic syndrome is active."
+    ],
+    teaching: "Nephrotic syndrome — especially membranous nephropathy — is highly thrombogenic from urinary loss of antithrombin III and protein S. RVT can be acute (flank pain, hematuria, AKI) or chronic (asymptomatic). Other causes: tumor invasion (RCC), trauma, hypercoagulable state. Treatment: anticoagulation; thrombolysis or thrombectomy for severe cases.",
+    category: "Common"
+  },
+  {
+    id: 49,
+    dx: "Post-streptococcal glomerulonephritis",
+    aliases: ["post streptococcal glomerulonephritis", "poststreptococcal glomerulonephritis", "psgn", "post strep gn", "acute glomerulonephritis"],
+    clues: [
+      "A 7-year-old boy presents with 1 week of tea-colored urine and periorbital swelling.",
+      "He had a strep pharyngitis 3 weeks ago that was treated with a 7-day course of amoxicillin.",
+      "BP is 142/92 (elevated for age). He has mild bilateral lower extremity edema.",
+      "UA: 3+ blood, 1+ protein, RBC casts on microscopy.",
+      "Complement studies: C3 markedly decreased, C4 normal. Anti-streptolysin O (ASO) titer elevated.",
+      "He is managed supportively with salt restriction, diuresis for hypertension and edema. Renal function normalizes over weeks."
+    ],
+    teaching: "Classic 'nephritic syndrome' in a child 1-3 weeks after strep pharyngitis or impetigo. Hallmarks: hematuria with RBC casts, mild proteinuria, HTN, edema, low C3 (normal C4) — immune complex deposition. Self-limited; supportive care. Adults can also develop PSGN with poorer prognosis.",
+    category: "Common"
+  },
+  {
+    id: 50,
+    dx: "IgA nephropathy",
+    aliases: ["iga nephropathy", "iga gn", "berger disease", "bergers disease", "iga"],
+    clues: [
+      "A 27-year-old man presents with episodes of painless gross hematuria, each lasting 1-3 days.",
+      "The first episode occurred 24 hours after a viral upper respiratory infection. He has had 3 similar episodes over 2 years.",
+      "Between episodes he has persistent microscopic hematuria and mild proteinuria (0.6 g/day).",
+      "Serum creatinine is 1.0 mg/dL. Complement (C3/C4) and ANA are normal.",
+      "Renal biopsy shows mesangial proliferation with IgA-dominant immune complex deposition on immunofluorescence.",
+      "He is started on optimized blood pressure control with an ACEi and counseled on long-term renal follow-up; ~25-30% progress to ESRD over decades."
+    ],
+    teaching: "Most common primary glomerulonephritis worldwide. Classic 'synpharyngitic hematuria' — gross hematuria within 1-2 days of URI (vs PSGN's 1-3 week lag). Biopsy: mesangial IgA deposits. Variable course — half stable, ~25-30% progress. Treatment: BP/proteinuria control (ACEi/ARB); immunosuppression for high-risk disease.",
+    category: "Common"
+  },
+  {
+    id: 51,
+    dx: "Renal trauma",
+    aliases: ["renal trauma", "renal injury", "blunt renal trauma", "kidney laceration", "renal laceration"],
+    clues: [
+      "A 22-year-old woman is brought to the trauma bay after a high-speed MVC. She is hemodynamically stable after 1 L crystalloid.",
+      "She has left flank pain, ecchymosis, and gross hematuria.",
+      "Hemoglobin is 11.4. She has lower rib fractures on the left.",
+      "CT abdomen with delayed (excretory) phase shows a deep parenchymal laceration extending into the collecting system with perinephric hematoma but no active extravasation.",
+      "Injury is graded AAST Grade IV. She remains hemodynamically stable on observation.",
+      "Non-operative management with bed rest, serial hemoglobins, and follow-up imaging. Selective angioembolization is held in reserve for delayed bleeding."
+    ],
+    teaching: "Most common GU trauma. Mechanism: blunt (~90% — MVC, sports) or penetrating. AAST grading I-V. Indications for imaging in blunt: gross hematuria, microscopic hematuria with shock, deceleration injury, penetrating mechanism. Most are managed non-operatively even at high grades if stable. Operative indications: hemodynamic instability not responsive to resuscitation, expanding/pulsatile hematoma at laparotomy.",
+    category: "Trauma"
+  },
+  {
+    id: 52,
+    dx: "Posterior urethral injury",
+    aliases: ["posterior urethral injury", "membranous urethral disruption", "urethral disruption", "pelvic fracture urethral injury"],
+    clues: [
+      "A 31-year-old man is brought to the trauma bay after a fall from height; pelvic exam reveals an open-book pelvic fracture.",
+      "He reports inability to urinate, with blood at the urethral meatus.",
+      "On rectal exam, the prostate is high-riding and not well-defined.",
+      "Foley catheterization is deferred; suprapubic catheter is placed for urinary diversion.",
+      "Retrograde urethrogram shows complete disruption of the membranous urethra with extravasation of contrast.",
+      "Delayed urethroplasty is planned at 3 months when the pelvic hematoma has resolved."
+    ],
+    teaching: "Blood at meatus + pelvic fracture = posterior urethral injury until proven otherwise. DO NOT pass a Foley — get retrograde urethrogram first. Urinary diversion: SP tube. Management: primary realignment vs delayed urethroplasty (most common modern approach for complete disruption). Long-term sequelae: stricture (very common), ED, incontinence.",
+    category: "Trauma"
+  },
+  {
+    id: 53,
+    dx: "Urinary schistosomiasis",
+    aliases: ["urinary schistosomiasis", "schistosoma haematobium", "schistosomiasis", "bilharzia", "bilharziasis"],
+    clues: [
+      "A 19-year-old man who recently immigrated from rural Egypt presents with intermittent painless terminal gross hematuria over 6 months.",
+      "He spent his childhood swimming and bathing in irrigation canals from the Nile River.",
+      "He reports mild dysuria and a sensation of incomplete emptying. No fever, no flank pain.",
+      "UA: numerous RBCs and eosinophils. Urine microscopy shows ova with a terminal spine.",
+      "Cystoscopy shows yellowish 'sandy patches' and granulomas of the bladder mucosa. Biopsy shows chronic inflammation with calcified ova.",
+      "He is treated with praziquantel; long-term surveillance is planned for the increased risk of bladder squamous cell carcinoma."
+    ],
+    teaching: "Schistosoma haematobium infestation from freshwater contact. Endemic in sub-Saharan Africa and Middle East. Eggs (terminal spine — vs S. mansoni's lateral spine) lodge in bladder mucosa causing inflammation, fibrosis, and 'sandy patches.' Long-term: contracted bladder, calcifications, hydroureteronephrosis, and #1 risk factor for bladder SQUAMOUS cell carcinoma (vs urothelial in the West).",
+    category: "Infection"
+  },
+  {
+    id: 54,
+    dx: "Genitourinary tuberculosis",
+    aliases: ["genitourinary tuberculosis", "gu tb", "renal tuberculosis", "urinary tb", "urogenital tuberculosis"],
+    clues: [
+      "A 42-year-old man who emigrated from India 4 years ago presents with 3 months of sterile pyuria, low-grade fevers, and weight loss.",
+      "He has had recurrent UTI symptoms unresponsive to multiple antibiotic courses.",
+      "Repeat urine cultures are negative for routine bacteria despite >10 WBCs/hpf.",
+      "He has a history of pulmonary tuberculosis treated 10 years ago — completion of therapy is uncertain.",
+      "CT shows a calcified, scarred right kidney with multiple irregular cavities and 'putty kidney' appearance. The right ureter shows beaded strictures.",
+      "Urine acid-fast bacilli smears are negative, but Mycobacterium tuberculosis is grown on culture and PCR-positive. He starts 4-drug RIPE therapy."
+    ],
+    teaching: "Sterile pyuria + scarring/calcified kidney + ureteral strictures in a patient from a TB-endemic area = think GU TB. Diagnosis: urine AFB smear (low yield), culture (gold standard, slow), PCR (NAAT). Imaging: parenchymal scarring, calcifications, 'beaded' ureters, autonephrectomy/'putty kidney'. Treatment: standard anti-TB regimen 6+ months ± surgery for non-functioning kidney or obstruction.",
+    category: "Infection"
+  },
+  {
+    id: 55,
+    dx: "Gonococcal urethritis",
+    aliases: ["gonococcal urethritis", "gonorrhea", "gonorrhoea", "gc urethritis", "neisseria gonorrhoeae urethritis"],
+    clues: [
+      "A 23-year-old sexually active man presents with 2 days of dysuria and a thick, purulent urethral discharge.",
+      "He has had three new sexual partners in the past 2 months. No condom use.",
+      "On exam, a copious yellow-green discharge is expressed from the urethral meatus. The testes are non-tender.",
+      "Gram stain of discharge shows abundant intracellular gram-negative diplococci within neutrophils.",
+      "NAAT is positive for Neisseria gonorrhoeae; also positive for Chlamydia trachomatis (~30% co-infection rate).",
+      "He receives a single dose of ceftriaxone 500 mg IM plus doxycycline 100 mg BID x 7 days for the chlamydial co-infection. Partners are notified and treated."
+    ],
+    teaching: "Profuse purulent discharge with abrupt onset (vs the watery/scant discharge of nongonococcal urethritis, which is more often Chlamydia). Diagnosis: NAAT (urine or swab). Treatment: ceftriaxone IM single dose; co-treat for Chlamydia (doxy x 7d) unless NAAT-excluded. Expedited partner therapy. Screen for syphilis and HIV.",
+    category: "Infection"
+  },
+  {
+    id: 56,
+    dx: "Renal papillary necrosis",
+    aliases: ["renal papillary necrosis", "papillary necrosis", "rpn"],
+    clues: [
+      "A 34-year-old man with sickle cell trait presents with right flank pain and gross hematuria.",
+      "He has chronic low back pain treated with daily ibuprofen for years. He also has poorly controlled diabetes.",
+      "UA: numerous RBCs, mild proteinuria. UA microscopy shows necrotic papillary tissue.",
+      "He has a recent history of pyelonephritis 6 weeks ago.",
+      "CT urogram shows a 'ring sign' — contrast outlining a sloughed papilla in the right collecting system, with associated hydronephrosis.",
+      "Management: treat the underlying causes (DM, NSAIDs), relieve obstruction if present, supportive care."
+    ],
+    teaching: "Sloughing of renal papillae from vasa recta compromise. Classic mnemonic POSTCARDS: Pyelonephritis, Obstruction, Sickle cell, TB, Cirrhosis/Cancer, Analgesic abuse (NSAIDs, phenacetin), Renal vein thrombosis, Diabetes, Systemic vasculitis. Triad of analgesic nephropathy, sickle cell, and diabetes is classic. Imaging: 'ring sign,' 'lobster claw' deformity of papilla.",
+    category: "Common"
+  },
+  {
+    id: 57,
+    dx: "Oncocytoma",
+    aliases: ["oncocytoma", "renal oncocytoma"],
+    clues: [
+      "A 64-year-old woman has a 3.5 cm right renal mass discovered incidentally on a CT done for diverticulitis.",
+      "She is asymptomatic. No hematuria, no weight loss, no flank pain.",
+      "Family history is unremarkable. No history of smoking or aniline dye exposure.",
+      "CT shows a well-circumscribed enhancing renal mass with a central stellate scar.",
+      "MRI confirms the central scar and homogeneous enhancement; however, imaging cannot reliably distinguish from chromophobe RCC.",
+      "Renal mass biopsy returns oncocytoma. Active surveillance is offered with serial imaging; partial nephrectomy is held in reserve."
+    ],
+    teaching: "Benign renal neoplasm of intercalated cell origin. Classic CT/MRI feature: central stellate scar (~30%, NOT pathognomonic — chromophobe RCC can mimic). Cannot be reliably distinguished from RCC by imaging alone → biopsy or surgery often needed. Hybrid oncocytic-chromophobe tumors exist in Birt-Hogg-Dubé. Management: surveillance for biopsy-proven oncocytoma in select cases; otherwise partial nephrectomy.",
+    category: "Oncology"
+  },
+  {
+    id: 58,
+    dx: "Von Hippel-Lindau disease",
+    aliases: ["von hippel lindau", "vhl", "von hippel lindau disease", "vhl syndrome"],
+    clues: [
+      "A 32-year-old man presents for surveillance. His father died at age 48 of metastatic kidney cancer; his sister has a pancreatic neuroendocrine tumor.",
+      "He has had two retinal hemangioblastomas treated with laser, and a cerebellar mass resected at age 27.",
+      "He is currently asymptomatic but is found on screening MRI to have bilateral, multifocal renal cysts and small enhancing renal masses.",
+      "He also has a small pheochromocytoma noted on biochemical screening (elevated metanephrines).",
+      "Genetic testing confirms a pathogenic VHL gene mutation on chromosome 3p25.",
+      "Renal lesions are managed with nephron-sparing surgery once any solid component reaches 3 cm (the '3 cm rule'). The pheochromocytoma is managed with alpha-blockade and adrenalectomy."
+    ],
+    teaching: "Autosomal dominant cancer syndrome (VHL gene, 3p25). Hallmarks: CNS/retinal hemangioblastomas, clear cell renal cell carcinoma (often bilateral/multifocal), pheochromocytoma, pancreatic cysts and NETs, endolymphatic sac tumors. '3 cm rule': resect solid renal lesions ≥3 cm (nephron-sparing). HIF pathway dysregulation drives tumorigenesis.",
+    category: "Genetic"
+  },
+  {
+    id: 59,
+    dx: "Bladder diverticulum",
+    aliases: ["bladder diverticulum", "vesical diverticulum", "bladder diverticula"],
+    clues: [
+      "A 72-year-old man with long-standing untreated BPH presents with recurrent UTIs and an unusual voiding pattern.",
+      "He describes 'two-stage voiding' — needing to void again 10 minutes after he finishes his first stream.",
+      "UA shows pyuria; culture grows E. coli. PVR is 250 mL.",
+      "Cystoscopy reveals a heavily trabeculated bladder with multiple cellules and a 4 cm posterolateral wall outpouching.",
+      "VCUG demonstrates retention of contrast within the outpouching after voiding. Biopsy of the diverticulum lining is negative for malignancy.",
+      "He undergoes TURP for outlet obstruction; the diverticulum is surveilled for malignancy and surgical excision is considered for persistent symptoms."
+    ],
+    teaching: "Acquired diverticula from chronic bladder outlet obstruction (BPH most commonly). 'Two-stage voiding' is classic. Lack a muscular wall → urinary stasis → infection, stones, and increased risk of urothelial cancer arising within. Treatment: relieve obstruction; diverticulectomy for symptomatic, large (>5 cm), or harboring tumor/stone.",
+    category: "Common"
+  },
+  {
+    id: 60,
+    dx: "Upper tract urothelial carcinoma",
+    aliases: ["upper tract urothelial carcinoma", "utuc", "transitional cell carcinoma of the renal pelvis", "renal pelvis tcc", "ureteral cancer", "upper urinary tract urothelial carcinoma"],
+    clues: [
+      "A 68-year-old former smoker presents with 2 weeks of painless gross hematuria.",
+      "Cystoscopy is negative for bladder lesions, but urine cytology is positive for malignant cells.",
+      "He has a history of Lynch syndrome (HNPCC).",
+      "CT urogram shows a 2.5 cm filling defect in the right renal pelvis with mild hydronephrosis.",
+      "Retrograde ureteropyelography confirms a filling defect; ureteroscopy with biopsy returns high-grade urothelial carcinoma of the renal pelvis.",
+      "He undergoes radical nephroureterectomy with bladder cuff excision and pelvic lymph node sampling."
+    ],
+    teaching: "Urothelial cancer of the renal pelvis/ureter. <10% of all urothelial cancers but presents at higher stage. Risk factors include smoking, aristolochic acid (Balkan nephropathy), and Lynch syndrome (think hereditary in young patients). Workup: CT urogram + cystoscopy + ureteroscopy. Standard surgery: radical nephroureterectomy with bladder cuff (because urothelial tumors seed downstream). Kidney-sparing options for select low-grade, low-stage cases.",
+    category: "Oncology"
+  },
+  {
+    id: 61,
+    dx: "Pelvic organ prolapse",
+    aliases: ["pelvic organ prolapse", "pop", "cystocele", "uterine prolapse", "vaginal prolapse", "vault prolapse"],
+    clues: [
+      "A 64-year-old G4P4 postmenopausal woman presents with 'a bulge in my vagina that I can feel and see.'",
+      "She reports a sensation of pelvic pressure that worsens by the end of the day and with prolonged standing.",
+      "She also has stress urinary incontinence and difficulty emptying her bladder, sometimes requiring her to 'splint' the bulge to void.",
+      "On exam in the standing position with Valsalva, the anterior vaginal wall protrudes 2 cm beyond the hymen.",
+      "POP-Q examination is consistent with Stage III anterior compartment prolapse (cystocele).",
+      "She is fit for a pessary and offered surgical sacrocolpopexy if conservative management fails."
+    ],
+    teaching: "Descent of pelvic organs through weakened pelvic floor. Risk: parity, vaginal delivery, age, menopause, obesity, chronic straining. Compartments: anterior (cystocele), posterior (rectocele), apical (uterine/vault). POP-Q quantifies severity. Treatment: pelvic floor PT, pessary, surgery (native tissue repair, sacrocolpopexy). FDA pulled transvaginal mesh for POP in 2019.",
+    category: "Common"
+  },
+  {
+    id: 62,
+    dx: "Vesicovaginal fistula",
+    aliases: ["vesicovaginal fistula", "vvf", "bladder vaginal fistula"],
+    clues: [
+      "A 48-year-old woman is referred 3 weeks after total abdominal hysterectomy for fibroids.",
+      "She reports constant urinary leakage from the vagina, soaking through pads, day and night.",
+      "She voids normally per urethra in between but is never dry.",
+      "On exam, urine pooling is seen in the vaginal vault; a tampon dye test (intravesical methylene blue) shows blue staining of the tampon.",
+      "Cystoscopy demonstrates a 5 mm defect at the bladder trigone communicating with the vaginal apex.",
+      "After an initial trial of catheter drainage, she undergoes transvaginal fistula repair with omental interposition."
+    ],
+    teaching: "Continuous leakage in a patient with intact urethral function after pelvic surgery or obstetric trauma. In the developed world, most are iatrogenic post-hysterectomy. In low-resource settings, prolonged obstructed labor is the most common cause. Workup: tampon dye test, cystoscopy, retrograde imaging. Treatment: small fresh fistulas may close with catheter drainage; most require surgical repair (transvaginal or transabdominal) with tissue interposition.",
+    category: "Common"
+  },
+  {
+    id: 63,
+    dx: "Female urethral diverticulum",
+    aliases: ["urethral diverticulum", "female urethral diverticulum", "uretheral diverticulum female"],
+    clues: [
+      "A 41-year-old woman presents with 18 months of recurrent UTIs, dyspareunia, and post-void dribbling.",
+      "She has been treated empirically multiple times for UTI; cultures have been inconsistent.",
+      "She also reports a tender anterior vaginal wall mass that occasionally expresses purulent fluid with pressure.",
+      "On exam, a tender, fluctuant mass is palpated along the anterior vaginal wall, and gentle pressure expresses cloudy fluid from the urethra.",
+      "MRI pelvis shows a 1.5 cm fluid-filled outpouching of the mid-urethra (the classic '3 Ds': dysuria, dribbling, dyspareunia).",
+      "She undergoes transvaginal urethral diverticulectomy with multilayered closure."
+    ],
+    teaching: "Localized outpouching of the urethra into the anterior vaginal wall. Classic '3 Ds': dribbling, dysuria, dyspareunia. Also recurrent UTI, urethral mass on exam. MRI is the imaging of choice. Risk of malignancy (adenocarcinoma) within ~6-9% of diverticula. Treatment: transvaginal diverticulectomy.",
+    category: "Common"
+  },
+  {
+    id: 64,
+    dx: "Emphysematous pyelonephritis",
+    aliases: ["emphysematous pyelonephritis", "ep", "gas forming pyelonephritis"],
+    clues: [
+      "A 61-year-old woman with poorly controlled type 2 diabetes (HbA1c 11.8%) presents with fever, severe right flank pain, and nausea for 3 days.",
+      "She appears toxic with HR 128, BP 88/50, glucose 482, lactate 5.1.",
+      "UA: large LE, positive nitrites, pyuria. Urine culture later grows E. coli.",
+      "She has been resistant to antibiotic therapy initiated 24 hours ago and continues to deteriorate.",
+      "CT abdomen reveals gas within the right renal parenchyma extending into the perinephric space — a finding consistent with severe gas-forming infection.",
+      "She receives aggressive resuscitation, IV broad-spectrum antibiotics, and percutaneous drainage. Emergent nephrectomy is considered if she fails to improve."
+    ],
+    teaching: "Life-threatening necrotizing infection of the kidney with gas production, almost exclusively in patients with diabetes (~90%) and/or obstruction. Mortality historically ~40%, lower with aggressive modern management. CT classification (Huang/Tseng) guides therapy: percutaneous drainage + antibiotics for limited disease; nephrectomy for extensive parenchymal destruction.",
+    category: "Emergency"
+  },
+  {
+    id: 65,
+    dx: "Penile fracture",
+    aliases: ["penile fracture", "fractured penis", "fracture of penis"],
+    clues: [
+      "A 29-year-old man presents to the ED 2 hours after a sudden 'popping' sound during vigorous intercourse.",
+      "He experienced immediate loss of erection, severe pain, and rapid penile swelling.",
+      "On exam, the penis is markedly ecchymotic and deformed in an 'eggplant' configuration with deviation away from the side of injury.",
+      "There is no blood at the urethral meatus. He is able to void without difficulty.",
+      "MRI confirms a 1.5 cm transverse rupture of the right tunica albuginea of the corpus cavernosum.",
+      "He is taken to the OR within 6 hours for surgical exploration, evacuation of hematoma, and primary closure of the tunica albuginea."
+    ],
+    teaching: "Traumatic rupture of the tunica albuginea of an erect corpus cavernosum. Classic story: audible 'pop' + immediate detumescence + 'eggplant deformity.' Surgical emergency — early repair prevents ED, curvature, and chronic pain. MRI if diagnosis uncertain. ~10-20% have concomitant urethral injury — evaluate with retrograde urethrogram if blood at meatus, hematuria, or inability to void.",
+    category: "Emergency"
+  },
+  {
+    id: 66,
+    dx: "Bladder stones",
+    aliases: ["bladder stones", "bladder stone", "vesical calculus", "vesical calculi", "vesicolithiasis", "bladder calculus"],
+    clues: [
+      "A 75-year-old man with long-standing untreated BPH presents with 6 months of worsening LUTS and intermittent hematuria.",
+      "He notes occasional sudden interruption of his urinary stream that resolves with positional changes.",
+      "He has recurrent UTIs and reports suprapubic discomfort relieved by lying flat.",
+      "PVR is 320 mL. KUB radiograph shows a 3 cm radio-opaque density in the bladder.",
+      "Cystoscopy confirms two large stones in the bladder; the trabeculated bladder and significant median lobe of the prostate are also noted.",
+      "He undergoes simultaneous cystolitholapaxy (laser fragmentation) and TURP."
+    ],
+    teaching: "Vesical calculi in adults are almost always secondary to outlet obstruction, stasis, foreign body (catheters, sutures), or neurogenic bladder. Classic: intermittent obstruction relieved by position change. Treatment: relieve underlying obstruction (e.g., TURP) AND remove the stones (cystolitholapaxy via laser or pneumatic lithotrite). Pure cystotomy reserved for very large stones.",
+    category: "Common"
+  },
+  {
+    id: 67,
+    dx: "Ureterocele",
+    aliases: ["ureterocele", "intravesical ureterocele", "ectopic ureterocele"],
+    clues: [
+      "A 4-year-old girl presents with her third febrile UTI.",
+      "Renal ultrasound is performed for workup of recurrent UTI.",
+      "Imaging shows a duplicated collecting system on the right with severe hydroureteronephrosis of the upper pole moiety.",
+      "Within the bladder, a thin-walled cystic dilation is seen at the ureteral orifice, intermittently 'ballooning' during filling.",
+      "VCUG confirms a ureterocele with associated VUR into the lower pole moiety. Functional study shows poor function of the upper pole moiety.",
+      "She undergoes endoscopic incision of the ureterocele for initial decompression; definitive management may include heminephrectomy or ureteral reimplantation."
+    ],
+    teaching: "Cystic dilation of the distal intravesical ureter, often with stenotic orifice. Classic association: duplex collecting system, with the ureterocele draining the upper pole (Weigert-Meyer rule: upper pole ureter inserts more inferior/medial → prone to obstruction/ureterocele; lower pole ureter inserts more superior/lateral → prone to reflux). Treatment varies by function and reflux: endoscopic puncture, upper pole partial nephrectomy, or reconstruction.",
+    category: "Pediatric"
+  },
+  {
+    id: 68,
+    dx: "Multicystic dysplastic kidney",
+    aliases: ["multicystic dysplastic kidney", "mcdk"],
+    clues: [
+      "A pregnant woman is referred at 24 weeks gestation after fetal ultrasound shows a unilateral enlarged left kidney replaced by multiple non-communicating cysts.",
+      "The contralateral right kidney appears normal. Amniotic fluid volume is normal.",
+      "Postnatally, ultrasound confirms multiple non-communicating cysts replacing the left renal parenchyma with no normal-functioning tissue.",
+      "DMSA renal scan shows no function in the left kidney; the right kidney is normal.",
+      "VCUG is performed because of the increased risk of VUR in the contralateral kidney (~15%); this is normal.",
+      "Conservative management with periodic ultrasound. Most MCDKs involute spontaneously over years."
+    ],
+    teaching: "Non-functioning kidney replaced by non-communicating cysts. Differentiate from hydronephrosis (cysts in MCDK don't communicate) and ADPKD (always bilateral, often hepatic cysts). Usually unilateral; bilateral is incompatible with life. Most involute spontaneously. Contralateral kidney must be normal — VUR is screened in some centers. Nephrectomy rarely indicated.",
+    category: "Pediatric"
+  },
+  {
+    id: 69,
+    dx: "Bladder neck contracture",
+    aliases: ["bladder neck contracture", "bnc", "bladder neck stenosis", "vesicourethral anastomotic stenosis"],
+    clues: [
+      "A 70-year-old man presents 6 months after radical prostatectomy with progressively worsening urinary stream and incomplete emptying.",
+      "He notes hesitancy, straining, and a sense of obstruction. He has no flank pain.",
+      "Uroflowmetry shows a Qmax of 4 mL/s with a plateau-shaped curve. PVR is 280 mL.",
+      "Cystoscopy reveals a stenotic vesicourethral anastomosis that does not admit the 16F cystoscope.",
+      "He undergoes endoscopic incision of the bladder neck (cold knife at 5 and 7 o'clock positions).",
+      "After incision, voiding returns to normal; he is monitored for recurrence (~20-30%)."
+    ],
+    teaching: "Scarring at the vesicourethral anastomosis after radical prostatectomy or at the bladder neck after TURP. Presents as obstructive LUTS in a previously prostatectomized patient. Diagnosis: cystoscopy. Treatment: endoscopic dilation or incision (DVIU). Recurrent cases: deeper bladder neck incision, intralesional steroid, mitomycin C, or rarely UroLume / artificial sphincter complications.",
+    category: "Common"
+  },
+  {
+    id: 70,
+    dx: "Asymptomatic bacteriuria",
+    aliases: ["asymptomatic bacteriuria", "asb", "bacteriuria without symptoms", "asymptomatic uti"],
+    clues: [
+      "A 28-year-old woman at 14 weeks of her first pregnancy is seen for routine prenatal care.",
+      "She is entirely asymptomatic — no dysuria, frequency, urgency, suprapubic pain, fever, or flank pain.",
+      "Routine prenatal urine culture grows >100,000 CFU/mL of Group B Streptococcus.",
+      "UA shows mild pyuria but otherwise unremarkable.",
+      "She is treated with a 5-day course of cephalexin per pregnancy guidelines, and a test-of-cure culture is performed 1-2 weeks later.",
+      "She is also flagged for intrapartum GBS prophylaxis given GBS bacteriuria in pregnancy."
+    ],
+    teaching: "Positive urine culture WITHOUT symptoms. Important point: treat ONLY in pregnancy or before urologic surgery involving mucosal trauma. Do NOT treat in nonpregnant adults, the elderly, or catheterized patients — antibiotics don't help and breed resistance. GBS bacteriuria in pregnancy is also an indication for intrapartum prophylaxis regardless of later GBS swab.",
     category: "Common"
   }
 ];

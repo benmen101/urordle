@@ -90,6 +90,32 @@ Edit `data/cases.js`. Each case is a plain object:
 }
 ```
 
+### Image clues
+
+A clue can be a plain string (default) **or** an object with an image:
+
+```js
+clues: [
+  "Plain text clue.",
+  {
+    text: "Optional text above the image.",
+    image: "/images/cases/foo.svg",
+    alt: "Required descriptive alt text for screen readers.",
+    caption: "Optional small caption rendered under the image."
+  }
+]
+```
+
+Images live in `images/cases/`. SVG is preferred (sharp at any size, tiny file).
+
+**Sourcing images legally:**
+- **Best**: original schematics or diagrams you author (see `images/cases/vur-grades.svg` as an example). Fully owned, no license concerns.
+- **Good**: [Radiopaedia](https://radiopaedia.org) — CC-BY-NC-SA. Include attribution in the `caption` field, e.g. `"Image: Case courtesy of Dr. X via Radiopaedia, CC BY-NC-SA"`. Note that NC = non-commercial: if you eventually run ads, Radiopaedia images are not allowed.
+- **Good**: Wikimedia Commons — verify per-image license. Many are CC-BY or public domain.
+- **Avoid**: copy-pasting from textbooks, journals, or hospital teaching files — copyrighted unless you have written permission.
+
+For a polished long-term solution, partner with a urology resident or attending to contribute original teaching cases with their own (de-identified, consented) images.
+
 The matcher is forgiving:
 - Exact alias match wins.
 - Token overlap (e.g., "renal cell" → "renal cell carcinoma") matches.

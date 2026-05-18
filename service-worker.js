@@ -1,8 +1,10 @@
 /* Urordle service worker — basic offline cache */
-const CACHE_NAME = 'urordle-v1';
+const CACHE_NAME = 'urordle-v2';
 const ASSETS = [
   '/',
   '/index.html',
+  '/privacy',
+  '/privacy.html',
   '/styles.css',
   '/app.js',
   '/data/cases.js',

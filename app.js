@@ -229,12 +229,38 @@
     }
     $('#case-category').textContent = state.case.category || 'Urology';
 
-    // Clues
+    // Clues — supports plain string clues OR { text, image, alt } objects.
     const clueList = $('#clue-list');
     clueList.innerHTML = '';
     for (let i = 0; i < state.cluesShown; i++) {
       const li = document.createElement('li');
-      li.textContent = state.case.clues[i];
+      const clue = state.case.clues[i];
+      if (typeof clue === 'string') {
+        li.textContent = clue;
+      } else {
+        if (clue.text) {
+          const p = document.createElement('p');
+          p.className = 'clue-text';
+          p.textContent = clue.text;
+          li.appendChild(p);
+        }
+        if (clue.image) {
+          const figure = document.createElement('figure');
+          figure.className = 'clue-figure';
+          const img = document.createElement('img');
+          img.src = clue.image;
+          img.alt = clue.alt || '';
+          img.loading = 'lazy';
+          img.decoding = 'async';
+          figure.appendChild(img);
+          if (clue.caption) {
+            const cap = document.createElement('figcaption');
+            cap.textContent = clue.caption;
+            figure.appendChild(cap);
+          }
+          li.appendChild(figure);
+        }
+      }
       clueList.appendChild(li);
     }
 

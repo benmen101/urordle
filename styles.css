@@ -131,6 +131,31 @@ body {
   color: var(--fg);
   animation: fade-in 240ms ease;
 }
+.clue-list .clue-text { margin: 0 0 8px; }
+.clue-list .clue-figure {
+  margin: 0;
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.clue-list .clue-figure img {
+  max-width: 100%;
+  max-height: 280px;
+  height: auto;
+  border-radius: 4px;
+  background: #fff;
+}
+.clue-list .clue-figure figcaption {
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--fg-muted);
+  font-style: italic;
+  text-align: center;
+}
 .clue-list li::before {
   content: counter(clue);
   counter-increment: clue;
@@ -517,6 +542,8 @@ body {
   border-top: 1px solid var(--border);
 }
 .footer p { margin: 0; }
+.footer a { color: var(--accent); text-decoration: none; }
+.footer a:hover { text-decoration: underline; }
 
 .hidden { display: none !important; }
 
